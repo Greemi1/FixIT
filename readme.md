@@ -1,7 +1,7 @@
 <div align="center">
   
   ![GitHub repo size](https://img.shields.io/github/repo-size/Greemi1/FixIT)
-  ![GitHub stars](https://img.shields.io/github/stars/Greemi1/FixITgit?style=social)
+  ![GitHub stars](https://img.shields.io/github/stars/Greemi1/FixIT?style=social)
   ![GitHub forks](https://img.shields.io/github/forks/Greemi1/FixIT?style=social)
 
   <br />
