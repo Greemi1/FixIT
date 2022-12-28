@@ -120,7 +120,7 @@ nav {
 
 nav ul {
   position: absolute;
-  top: -600%;
+  top: -1000%;
   left: 0;
   right: 0;
   display: block;
@@ -145,31 +145,26 @@ nav ul li {
 nav ul li a {
   margin-left: 10px;
   color: var(--black);
-  transition: all 0.3s linear;
+  transition: color 0.3s linear;
 }
 
 nav ul li a:hover {
   color: var(--main-color);
 }
 
-#open-menu-btn,
-#close-menu-btn {
-  display: none;
+#menu-btn {
+  font-size: 30px;
   cursor: pointer;
-}
-
-#open-menu-btn.active,
-#close-menu-btn.active {
-  display: block;
 }
 
 /* Home */
 
 .home {
-  background: url(images/home-image.png);
+  background: url(images/home-image.webp);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  object-fit: cover;
   margin: 4rem 0 0 0;
   min-height: 90vh;
 }
@@ -238,8 +233,14 @@ nav ul li a:hover {
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.achievement .box-container .box img {
+.achievement .box-container .box i {
   margin-right: 25px;
+  font-size: 48px;
+  color: var(--main-color);
+}
+
+.achievement .box-container .box i.mt {
+  margin-top: 5px;
 }
 
 .achievement .box-container .box .content {
@@ -282,7 +283,20 @@ nav ul li a:hover {
 }
 
 .about .box-container .content h3 {
+  position: relative;
   margin-bottom: 30px;
+}
+
+.about .box-container .content h3::before {
+  content: '';
+  position: absolute;
+  top: 13px;
+  left: -8px;
+  width: 18px;
+  height: 5px;
+  background-color: var(--main-color);
+  border-radius: 12px;
+  opacity: 0.7;
 }
 
 .about .box-container .content p {
@@ -355,11 +369,16 @@ nav ul li a:hover {
 .services .box-container .box .content .more a {
   display: flex;
   text-align: center;
+  align-items: center;
   font-weight: 500;
   gap: 8px;
 }
 
-.services .box-container .box .content .more:hover img {
+.services .box-container .box .content .more i {
+  font-size: 18px;
+}
+
+.services .box-container .box .content .more:hover i {
   animation: bounceRight 1s infinite;
 }
 
@@ -394,8 +413,13 @@ nav ul li a:hover {
 }
 
 .reviews .slide .stars {
+  position: absolute;
+  left: 0;
+  bottom: 48px;
+  right: 0;
   text-align: center;
-  margin-top: 50px;
+  font-size: 24px;
+  color: var(--main-color);
 }
 
 /* Blogs */
@@ -432,11 +456,16 @@ nav ul li a:hover {
 .blogs .slide .content .more a {
   display: flex;
   text-align: center;
+  align-items: center;
   font-weight: 500;
   gap: 8px;
 }
 
-.blogs .slide .content .more:hover img {
+.blogs .slide .content .more i {
+  font-size: 18px;
+}
+
+.blogs .slide .content .more:hover i {
   animation: bounceRight 1s infinite;
 }
 
@@ -550,10 +579,17 @@ input::-webkit-inner-spin-button {
 
 .footer .box-container .box .social a {
   padding-right: 1.25rem;
+  font-size: 32px;
+  transition: all .3s linear;
+}
+
+.footer .box-container .box .social a:hover {
+  color: var(--black);
 }
 
 .footer .box-container .box .links {
   display: flex;
+  align-items: center;
   margin: 25px 0;
   color: var(--black);
   transition: all 0.3s linear;
@@ -563,8 +599,10 @@ input::-webkit-inner-spin-button {
   color: var(--main-color);
 }
 
-.footer .box-container .box .links img {
+.footer .box-container .box .links i {
   margin-right: 10px;
+  font-size: 20px;
+  color: var(--main-color);
 }
 
 @media (min-width: 450px) {
@@ -595,6 +633,11 @@ input::-webkit-inner-spin-button {
 
   .about .box-container .content h3 {
     font-size: 30px;
+  }
+
+  .about .box-container .content h3::before {
+    top: 20px;
+    left: -8px;
   }
 
   .about .box-container .image,
@@ -631,6 +674,11 @@ input::-webkit-inner-spin-button {
 }
 
 @media (min-width: 768px) {
+
+  #menu-btn {
+    display: none;
+
+  }
   .heading {
     font-size: 48px;
   }
@@ -674,10 +722,6 @@ input::-webkit-inner-spin-button {
   nav ul li.active a {
     color: var(--main-color);
     border-bottom: 2px solid var(--main-color);
-  }
-
-  #open-menu-btn.active {
-    display: none;
   }
 
   .home .content h1 {

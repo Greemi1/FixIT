@@ -1,51 +1,69 @@
 const nav = document.querySelector('nav ul');
-const openMenuBtn = document.querySelector('#open-menu-btn');
-const closeMenuBtn = document.querySelector('#close-menu-btn');
+const menuBtn = document.querySelector('#menu-btn');
 
-openMenuBtn.addEventListener('click', () => {
-  nav.classList.add('active');
-  openMenuBtn.classList.remove('active');
-  closeMenuBtn.classList.add('active');
-});
-
-closeMenuBtn.addEventListener('click', () => {
-  nav.classList.remove('active');
-  openMenuBtn.classList.add('active');
-  closeMenuBtn.classList.remove('active');
+menuBtn.addEventListener('click', () => {
+  nav.classList.toggle('active');
+  menuBtn.classList.toggle('fa-times');
 });
 
 window.addEventListener('scroll', () => {
   nav.classList.remove('active');
-  openMenuBtn.classList.add('active');
-  closeMenuBtn.classList.remove('active');
+  menuBtn.classList.remove('fa-times');
 });
 
 // Counter
+
+// const achievementContainer = document.querySelector('.achievement');
+// const counter = document.querySelectorAll('.counter');
+// let bol = false;
+
+// const sectionOffset = achievementContainer.offsetTop + achievementContainer.offsetHeight;
+// const pageOffset = window.innerHeight + pageYOffset;
+
+// if (pageOffset < sectionOffset && bol == false) {
+//   counter.forEach((counter) => {
+//     function updateCount() {
+//       const target = +counter.getAttribute('data-target');
+//       const speed = +counter.getAttribute('data-speed');
+//       const count = +counter.innerText;
+//       if (count < target) {
+//         counter.innerText = count + 1;
+//         setTimeout(updateCount, speed);
+//       } else {
+//         counter.innerText = target;
+//       }
+//     }
+//     updateCount();
+//     bol = true;
+//   });
+// }
 
 const achievementContainer = document.querySelector('.achievement');
 const counter = document.querySelectorAll('.counter');
 let bol = false;
 
-const sectionOffset = achievementContainer.offsetTop + achievementContainer.offsetHeight;
-const pageOffset = window.innerHeight + pageYOffset;
+window.addEventListener('scroll', () => {
+  const sectionOffset = achievementContainer.offsetTop + achievementContainer.offsetHeight;
+  const pageOffset = window.innerHeight + pageYOffset;
 
-if (pageOffset < sectionOffset && bol == false) {
-  counter.forEach((counter) => {
-    function updateCount() {
-      const target = +counter.getAttribute('data-target');
-      const speed = +counter.getAttribute('data-speed');
-      const count = +counter.innerText;
-      if (count < target) {
-        counter.innerText = count + 1;
-        setTimeout(updateCount, speed);
-      } else {
-        counter.innerText = target;
+  if (pageOffset > sectionOffset && bol == false) {
+    counter.forEach((counter) => {
+      function updateCount() {
+        const target = +counter.getAttribute('data-target');
+        const speed = +counter.getAttribute('data-speed');
+        const count = +counter.innerText;
+        if (count < target) {
+          counter.innerText = count + 1;
+          setTimeout(updateCount, speed);
+        } else {
+          counter.innerText = target;
+        }
       }
-    }
-    updateCount();
-    bol = true;
-  });
-}
+      updateCount();
+      bol = true;
+    });
+  }
+});
 
 // Active links
 
