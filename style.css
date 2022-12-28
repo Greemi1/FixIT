@@ -548,6 +548,73 @@ input::-webkit-inner-spin-button {
   margin-bottom: 20px;
 }
 
+/* Articles */
+
+.article {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.title-banner {
+  background: url(images/home-image.webp);
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  margin-top: 75px; 
+  min-height: 20vh;
+}
+
+.title-banner h1 {
+  text-align: center;
+  padding: 32px 16px;
+  font-size: 24px;
+  color: var(--white);
+  text-shadow: 4px 4px 4px #000000;
+}
+
+.article .content {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.article .content .title {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  gap: 15px;
+}
+
+.article .content .title span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+  color: var(--main-color);
+}
+
+.article .content .title h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--main-color);
+}
+
+.article .content p {
+  margin-bottom: 24px;
+  line-height: 200%;
+}
+
+.article .content .back {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 18px;
+}
+
+.article .content .back:hover i {
+  animation: bounceLeft 1s infinite;
+}
+
 /* footer */
 
 .footer {
@@ -663,11 +730,6 @@ input::-webkit-inner-spin-button {
     font-size: 30px;
   }
 
-  nav .logo img {
-    width: 40px;
-    height: 40px;
-  }
-
   .blogs .slide {
     height: 650px;
   }
@@ -684,7 +746,8 @@ input::-webkit-inner-spin-button {
   }
 
   nav {
-    padding: 24px 18px;
+    padding: 14px 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   nav ul {
@@ -797,6 +860,16 @@ input::-webkit-inner-spin-button {
   .contact .small-box-container .small-box ul li {
     margin-bottom: 20px;
   }
+
+  .title-banner {
+    margin-top: 75px; 
+  }
+
+  .title-banner h1 {
+    padding: 50px 16px;
+    font-size: 32px;
+  }
+
 }
 
 @media (min-width: 992px) {
@@ -825,14 +898,6 @@ input::-webkit-inner-spin-button {
 }
 
 @media (min-width: 1200px) {
-  nav {
-    padding: 24px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-
-  nav ul li {
-    font-size: 24px;
-  }
 
   .home .content h1 {
     font-size: 60px;
@@ -893,6 +958,20 @@ input::-webkit-inner-spin-button {
 
   50% {
     transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-5px);
   }
 
   100% {
